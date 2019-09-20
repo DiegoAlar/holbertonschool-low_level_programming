@@ -4,17 +4,17 @@
 *
 *Return: Always 0 (Success)
 */
-
 int main(void)
 {
-	int c;
+	int num;
 
-	c = 0;
-	while (c < 10)
+	num = 48;
+	while (num < 58)
 	{
-		printf("%d", c);
-		c++;
+		putchar (num);
+		num++;
 	}
-	printf("\n");
+	putchar('\n');
+
 	return (0);
 }
