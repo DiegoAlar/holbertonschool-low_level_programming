@@ -9,8 +9,7 @@ int main(void)
 	int num;
 
 	num = 48;
-	do
-	{
+	do {
 		putchar(num);
 		num++;
 		if (num < 58)
@@ -18,8 +17,7 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 		}
-	}
-	while (num < 58);
+	} while (num < 58);
 	putchar('\n');
 
 	return (0);
