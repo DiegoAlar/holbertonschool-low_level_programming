@@ -1,5 +1,5 @@
 #include<stdio.h>
-/**i
+/**
 *main - void
 *
 *Return: Always 0 (Success)
@@ -13,18 +13,17 @@ int main(void)
 	first = 48;
 	second = 48;
 	count = 2;
-	while(first < 58)
+	while (first < 58)
 	{
 		while (second < 58)
 		{
-			
 			putchar(first);
 			putchar(second);
-			if((first != 56) && (count != 10))
+			if ((first != 56) && (count != 10))
 			{
 				putchar(',');
-				putchar(' ');			
-			}	
+				putchar(' ');
+			}
 			second++;
 		}
 		second = 48 + count;
