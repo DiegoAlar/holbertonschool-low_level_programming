@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 /**
 *main - void
 *
@@ -11,7 +11,7 @@ int main(void)
 	int count;
 
 	first = 48;
-	second = 48;
+	second = 49;
 	count = 2;
 	while (first < 58)
 	{
