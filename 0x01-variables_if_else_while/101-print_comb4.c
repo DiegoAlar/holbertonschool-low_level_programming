@@ -3,16 +3,19 @@
 *main - void
 *
 *Return: Always 0 (Success)
-*/
+ */
 int main(void)
 {
-	int first, second, third, add, add3;
+	int first;
+	int second;
+	int third;
+	int add;
+	int add3;
 
 	first = 50;
 	second = 49;
 	add = 0;
 	add3 = 0;
-
 	for (third = 48; third < 56; third++)
 	{
 		for (; second < 57; second++)
@@ -34,7 +37,7 @@ int main(void)
 		add3++;
 		first = 50 + add3;
 		second = 49 + add3;
-		add = 0;	
+		add = 0;
 	}
 	putchar('\n');
 	return (0);
