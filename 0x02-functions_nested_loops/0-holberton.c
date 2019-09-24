@@ -1,8 +1,8 @@
 #include "holberton.h"
 /**
-*main - void
+* main - void
 *
-*Return 0 (success)
+* Return: 0
 */
 int main(void)
 {
