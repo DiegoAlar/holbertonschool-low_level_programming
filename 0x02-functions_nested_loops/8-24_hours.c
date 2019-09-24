@@ -6,16 +6,21 @@
 */
 void jack_bauer(void)
 {
-	int first, second, third, fourth;
+	int first, second, third, fourth, hoursLimiter;
 
 	first = 0;
 	second = 0;
 	third = 0;
 	fourth = 0;
+	hoursLimiter = 10;
 
 	for (; first < 3; first++)
 	{
-		for (; second < 4; second++)
+		if (first == 2)
+		{
+			hoursLimiter = 4;
+		}
+		for (; second < hoursLimiter; second++)
 		{
 			for (; third < 6; third++)
 			{
@@ -33,5 +38,6 @@ void jack_bauer(void)
 			third = 0;
 		}
 		second = 0;
+		hoursLimiter = 10;
 	}
 }
