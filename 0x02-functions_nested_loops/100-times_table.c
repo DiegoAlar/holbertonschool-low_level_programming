@@ -21,7 +21,7 @@ void print_times_table(int n)
 {
 	int multiplier = 0, number = 0, count1, count2;
 
-	if (n > 0 && n < 16)
+	if (n >= 0 && n <= 14)
 	{
 		for (count1 = 0; count1 <= n; count1++)
 		{	_putchar(number + '0');
