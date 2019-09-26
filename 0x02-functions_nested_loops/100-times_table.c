@@ -24,9 +24,9 @@ void print_times_table(int n)
 	if (n >= 0 && n <= 14)
 	{
 		for (count1 = 0; count1 <= n; count1++)
-		{	_putchar(number + '0');
-			_putchar(',');
-			_putchar(' ');
+		{
+			_putchar(number + '0');
+			printChars(n, count1);
 			for (count2 = 1; count2 <= n; count2++)
 			{
 				number = number + multiplier;
