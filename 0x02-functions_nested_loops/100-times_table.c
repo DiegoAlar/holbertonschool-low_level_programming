@@ -40,14 +40,14 @@ void print_times_table(int n)
 				else if (number > 9 && number < 100)
 				{
 					_putchar(' ');
-					_putchar((number / 10) + '0');
+					_putchar(((number / 10) % 10) + '0');
 					_putchar((number % 10) + '0');
 					printChars(n, count2);
 				}
 				else
 				{
-					_putchar(((number / 10) / 10) + '0');
-					_putchar(((number % 100) / 10) + '0');
+					_putchar((number / 100) + '0');
+					_putchar(((number / 10) % 10) + '0');
 					_putchar((number % 10) + '0');
 					printChars(n, count2);
 				}
