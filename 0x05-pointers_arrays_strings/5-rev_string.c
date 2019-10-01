@@ -21,11 +21,12 @@ int _strlen(char *s)
 */
 void rev_string(char *s)
 {
-	int i, k = 0;
+	int i, c, k = 0;
 	char temp;
 
 	i = _strlen(s) - 1;
-	while (i != 0)
+	c = i / 2;
+	while (i > c)
 	{
 		temp = s[i];
 		s[i] = s[k];
