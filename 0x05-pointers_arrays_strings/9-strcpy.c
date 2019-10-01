@@ -8,9 +8,14 @@
 */
 char *_strcpy(char *dest, char *src)
 {
-	int i = 0;
+	int i= 0, k = 0;
 
-	while (i < 99)
+	while (src[k] != 0)
+	{
+		k++;
+	}
+
+	while (i < k)
 	{
 		*(dest + i) = *(src + i);
 		i++;
