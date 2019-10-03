@@ -2,7 +2,7 @@
 /**
 * _strcat - appends one string to the other
 * @dest: the string to be merged
-* @param: the string to append
+* @src: the string to append
 * Return: the string with the merged content
 */
 char *_strcat(char *dest, char *src)
@@ -20,5 +20,5 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
-	return dest;
+	return (dest);
 }
