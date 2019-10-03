@@ -8,19 +8,38 @@
 */
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i = 0, k = 0;
+	int i = 0, k = 0, count = 0;
 
-	/*while (dest[i] != '\0')
+	while (src[count] != '\0')
 	{
-		i++;
-	}*/
+		count++;
+	}
 	while (src[k] != '\0' && k < n)
 	{
-		*(dest + i) = *(src + k);
-		k++;
-		i++;
+		if (count < n)
+		{
+			if (src[k + 1] == '\0' )
+			{
+				while (k != n)
+				{
+					dest[k] = '\0';
+					k++;
+				}
+			}
+			else
+			{
+				*(dest + i) = *(src + k);
+				k++;
+				i++;
+			}
+		}
+		else
+		{
+			*(dest + i) = *(src + k);
+			k++;
+			i++;
+		}
 	}
-	/*(dest + i) = '\0';*/
 	return (dest);
 }
 
