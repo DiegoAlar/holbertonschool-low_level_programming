@@ -20,11 +20,13 @@ char *_strncpy(char *dest, char *src, int n)
 		{
 			if (src[k + 1] == '\0' )
 			{
-				while (k != n)
+				while (k != (n - 1) )
 				{
-					dest[k] = '\0';
 					k++;
+					dest[k] = '\0';
+
 				}
+				dest[k] = '\0';
 			}
 			else
 			{
