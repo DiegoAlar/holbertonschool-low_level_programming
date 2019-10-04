@@ -32,6 +32,10 @@ char *cap_string(char *s1)
 
 			case 9:
 			s1[k] = 32;
+			if ((s1[k + 1] > 96 && s1[k + 1] < 123))
+			{
+				s1[k + 1] = s1[k + 1] - 32;
+			}
 			break;
 		}
 		k++;
