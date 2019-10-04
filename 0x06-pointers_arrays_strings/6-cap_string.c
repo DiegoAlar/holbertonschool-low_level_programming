@@ -10,36 +10,20 @@ char *cap_string(char *s1)
 
 	while (s1[k] != '\0')
 	{
-		/*if (s1[k] == ',' || s1[k] == ';' || s1[k] == '.' || s1[k] == '!' || s1[k] == '?' || s1[k] == '"'*/
-		switch (s1[k])
+		if (s1[k] == ',' || s1[k] == ';' || s1[k] == '.' || s1[k] == '!' || s1[k] == '?' || s1[k] == '"' || s1[k] == '(' || s1[k] == ')' || s1[k] == '{' || s1[k] == '}' || s1[k] == 32 || s1[k] == 10)
 		{
-			case ',':
-			case ';':
-			case '.':
-			case '!':
-			case '?':
-			case '"':
-			case '(':
-			case ')':
-			case '{':
-			case '}':
-			case 32:
-			case 10:
 			if ((s1[k + 1] > 96 && s1[k + 1] < 123))
 			{
 				s1[k + 1] = s1[k + 1] - 32;
 			}
-			break;
-
-			case 9:
+		}
+		else if (s1[k] == 9)
+		{
 			s1[k] = 32;
-			if ((s1[k + 1] > 96 && s1[k + 1] < 123))
+			if (s1[k + 1] > 96 && s1[k + 1] < 123)
 			{
 				s1[k + 1] = s1[k + 1] - 32;
 			}
-			break;
-			default:
-			break;
 		}
 		k++;
 	}
