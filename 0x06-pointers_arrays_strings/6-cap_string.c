@@ -10,6 +10,7 @@ char *cap_string(char *s1)
 
 	while (s1[k] != '\0')
 	{
+		/*if (s1[k] == ',' || s1[k] == ';' || s1[k] == '.' || s1[k] == '!' || s1[k] == '?' || s1[k] == '"'*/
 		switch (s1[k])
 		{
 			case ',':
