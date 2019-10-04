@@ -26,7 +26,7 @@ char *cap_string(char *s1)
 			case 10:
 			if ((s1[k + 1] > 96 && s1[k + 1] < 123))
 			{
-			s1[k + 1] = s1[k + 1] - 32;
+				s1[k + 1] = s1[k + 1] - 32;
 			}
 			break;
 
@@ -36,6 +36,8 @@ char *cap_string(char *s1)
 			{
 				s1[k + 1] = s1[k + 1] - 32;
 			}
+			break;
+			default:
 			break;
 		}
 		k++;
