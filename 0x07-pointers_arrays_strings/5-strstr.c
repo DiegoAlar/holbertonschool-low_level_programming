@@ -15,21 +15,24 @@ char *_strstr(char *haystack, char *needle)
 	}
 	else
 	{
-	for (; haystack[i] != '\0'; i++)
-	{
-		for (k = 0; needle[k] != '\0'; k++)
+		for (; haystack[i] != '\0'; i++)
 		{
-			if (needle[k] == haystack[i])
+			for (k = 0; needle[k] != '\0'; k++)
 			{
-				haystack += i;
-				return (haystack);
+				if (needle[k] == haystack[i])
+				{
+					haystack += i;
+					return (haystack++);
+				}
+				else
+				{
+					break;
+				}
+
 			}
-			else
-			{
-				break;
-			}
+
 		}
-	}
+
 	}
 	return (0);
 }
