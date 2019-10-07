@@ -9,9 +9,9 @@ char *_strstr(char *haystack, char *needle)
 {
 	int i = 0, k = 0;
 
-	for (; haystack[i] != '\0'; i++)
+	for (; haystack[i] != '0'; i++)
 	{
-		for (k = 0; needle[k] != '\0'; k++)
+		for (k = 0; needle[k] != '0'; k++)
 		{
 			if (needle[k] == haystack[i])
 			{
