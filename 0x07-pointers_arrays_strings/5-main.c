@@ -12,7 +12,7 @@ int main(void)
 
 	char *s = "hello, world";
 
-	char *f = "world";
+	char *f = "d";
 
 	char *t;
 
