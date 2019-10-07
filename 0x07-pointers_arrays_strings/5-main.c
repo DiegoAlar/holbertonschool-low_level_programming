@@ -9,15 +9,16 @@
 int main(void)
 {
 
+
 	char *s = "hello, world";
 
-	char *f = "ap";
+	char *f = "world";
 
 	char *t;
 
 
 
-	t = _strpbrk(s, f);
+	t = _strstr(s, f);
 
 	printf("%s\n", t);
 
