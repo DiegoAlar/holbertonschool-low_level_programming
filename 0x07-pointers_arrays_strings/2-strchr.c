@@ -21,6 +21,7 @@ char *_strchr(char *s, char c)
 		}
 		i++;
 	}
-	s[0] = '\0';
+	/*s[0] = '\0';*/
+	s = "";
 return (s);
 }
