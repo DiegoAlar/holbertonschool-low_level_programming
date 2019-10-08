@@ -10,9 +10,9 @@ int main(void)
 {
 
 
-	char *s = "hello, wworld";
+	char *s = "First, solve the problem. Then, write the code.";
 
-	char *f = "world";
+	char *f = "solve";
 
 	char *t;
 
