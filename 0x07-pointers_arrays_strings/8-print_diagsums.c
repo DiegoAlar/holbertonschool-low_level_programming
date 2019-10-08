@@ -14,7 +14,7 @@ void print_diagsums(int *a, int size)
 		d1 += a[count];
 		count = count + size + 1;
 	}
-	count = matrix - 1;
+	count = size - 1;
 	while (count < (matrix - 1))
 	{
 		d2 += a[count];
