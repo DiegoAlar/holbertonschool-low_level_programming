@@ -48,7 +48,7 @@ int isPal(char *s, int size, int init, int limit)
 {
 	if (init != limit)
 	{
-		if (s[init] == s[size - 1])
+		if (s[init] == s[size - 1] || s[init] == 32 || s[size - 1] == 32)
 		{
 			return (1 + isPal(s, (size - 1), (init + 1), limit));
 
