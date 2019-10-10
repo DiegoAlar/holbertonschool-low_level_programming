@@ -48,7 +48,7 @@ int isPal(char *s, int size, int init, int limit)
 {
 	if (init != limit)
 	{
-		if (s[init] == s[size - 1] || s[init] == 32 || s[size - 1] == 32)
+		if (s[init] == s[size - 1])
 		{
 			return (1 + isPal(s, (size - 1), (init + 1), limit));
 
@@ -73,7 +73,7 @@ int is_palindrome(char *s)
 
 	size = findSize(s);
 	limit = size / 2;
-	if (size == 0)
+	if (limit == 0)
 	{
 		return (0);
 	}
