@@ -57,7 +57,7 @@ int isPal(char *s, int size, int init, int limit)
 	}
 	else
 	{
-		return (1);
+		return (0);
 
 	}
 }
