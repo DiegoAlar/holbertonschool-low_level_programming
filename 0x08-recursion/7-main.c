@@ -19,7 +19,7 @@ int main(void)
 				        r = is_palindrome("step on no pets");
 					    printf("%d\n", r);
 
-				        r = is_palindrome("s");
+				        r = is_palindrome("");
 					    printf("%d\n", r);
 					        return (0);
 }

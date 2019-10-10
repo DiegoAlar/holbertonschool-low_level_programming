@@ -73,7 +73,12 @@ int is_palindrome(char *s)
 
 	size = findSize(s);
 	limit = size / 2;
-	res = (isPal(s, size, init, limit));
-	return (comp(res));
+	if (size == 0)
+		return (0);
+	else
+	{
+		res = (isPal(s, size, init, limit));
+		return (comp(res));
+	}
 
 }
