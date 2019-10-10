@@ -73,7 +73,7 @@ int is_palindrome(char *s)
 
 	size = findSize(s);
 	limit = size / 2;
-	if (limit == 0)
+	if (size < 2)
 	{
 		return (0);
 	}
