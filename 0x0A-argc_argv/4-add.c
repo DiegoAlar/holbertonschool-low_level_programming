@@ -19,7 +19,7 @@ int main(__attribute__((unused)) int argc, char *argv[])
 		else
 		{
 			printf("Error\n");
-			return (0);
+			return (1);
 		}
 	}
 
