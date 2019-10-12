@@ -8,13 +8,20 @@
 */
 int main(int argc, char *argv[])
 {
-	int i = 1, sum = 0;
-
-	if (argc != 1)
-	{
+	int i = 1, sum = 0, k = 0;
 
 	for (; i < argc; i++)
 	{
+		while (argv[i][k] != '\0')
+		{
+			if (argv[i][k] < 48 && argv[i][k] > 57)
+			{
+				printf("Error\n");
+				return (1);
+			}
+			k++;
+		}
+
 		if (atoi(argv[i]))
 		{
 			sum += atoi(argv[i]);
@@ -25,7 +32,7 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	}
+
 	printf("%d\n", sum);
 	return (0);
 }
