@@ -21,16 +21,7 @@ int main(int argc, char *argv[])
 			}
 			k++;
 		}
-
-		if (atoi(argv[i]))
-		{
-			sum += atoi(argv[i]);
-		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		sum += atoi(argv[i]);
 	}
 
 	printf("%d\n", sum);
