@@ -12,15 +12,14 @@ int main(int argc, char *argv[])
 
 	for (; i < argc; i++)
 	{
-		while (argv[i][k] != '\0')
+		for (; argv[i][k] != '\0';  k++)
 		{
-			if (argv[i][k] < '0' && argv[i][k] > '9')
+			if (argv[i][k] < '0' || argv[i][k] > '9')
 			{
 				printf("Error\n");
 				return (1);
 			}
-			k++;
-		}
+			}
 		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
