@@ -11,7 +11,7 @@
 int *array_range(int min, int max)
 {
 	int *n;
-	int elements = 0, k = 0;
+	int elements, k = 1;
 
 	if (min > max)
 		return (NULL);
@@ -20,10 +20,11 @@ int *array_range(int min, int max)
 	n = malloc(sizeof(*n) * elements);
 	if (n == NULL)
 		return (NULL);
-	while (min < elements)
+	n[0] = min;
+	while (k < elements)
 	{
-		n[k] = min;
 		min++;
+		n[k] = min;
 		k++;
 	}
 	return (n);
