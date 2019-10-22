@@ -9,16 +9,14 @@
   */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i = 0, k = 0;
+	int i = 0, k = 0, q = 0, z = 0;
 	dog_t *firulais;
 
-	firulais = malloc(sizeof(dog_t));
+	if (name == NULL || owner == NULL)
+		return (NULL);
+	firulais = malloc(sizeof(dog_t) + 1);
 	if (firulais == NULL)
 		return (NULL);
-	if (name == NULL)
-		name = "";
-	if (owner == NULL)
-		owner = "";
 	while (name[i++])
 	while (owner[k++])
 	firulais->name = malloc(sizeof(char) * (i + 1));
@@ -35,18 +33,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	firulais->age = age;
-	i = 0, k = 0;
-	while (name[i])
+	for (; q <= i; q++)
 	{
-		firulais->name[i] = name[i];
-		i++;
+		firulais->name[q] = name[q];
 	}
-	firulais->name[i] = '\0';
-	while (owner[k])
+	for (; z <= k; z++)
 	{
-		firulais->owner[k] = owner[k];
-		k++;
+		firulais->owner[z] = owner[z];
 	}
-	firulais->owner[k] = '\0';
 	return (firulais);
 }
