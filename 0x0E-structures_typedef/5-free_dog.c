@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
-  *
-  *
+  * free_dog - function that frees dogs.
+  * @d: this is the struct of type dog_t to be freed
   *
   *
   */
