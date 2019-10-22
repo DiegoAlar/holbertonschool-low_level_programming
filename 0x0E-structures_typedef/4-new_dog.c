@@ -15,10 +15,10 @@ dog_t *new_dog(char *name, float age, char *owner)
 	firulais = malloc(sizeof(dog_t));
 	if (firulais == NULL)
 		return (NULL);
-	if (name == 0)
-		return (NULL);
-	if (owner == 0)
-		return (NULL);
+	if (name == NULL)
+		name = "";
+	if (owner == NULL)
+		owner = "";
 	while (name[i++])
 	while (owner[k++])
 	firulais->name = malloc(sizeof(char) * (i + 1));
