@@ -8,5 +8,10 @@
 int main(void)
 {
 	    print_strings(", ", 2, "Jay", "Django");
+
+	    print_strings(", ", 2, NULL, "Django");
+	    print_strings(NULL, 2, "Jay", "Django");
+
+
 	        return (0);
 }
