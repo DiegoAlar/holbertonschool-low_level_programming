@@ -67,7 +67,6 @@ void print_all(const char * const format, ...)
 		{'f', printFloat},
 	};
 	va_start(valist, format);
-
 	while (format[i] && format)
 	{
 		switch (f)
