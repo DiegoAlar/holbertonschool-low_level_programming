@@ -4,6 +4,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
+
+/**
+  * struct tpes - structure tpes
+  * @t: a format
+  * @f: function
+  */
 typedef struct tpes
 {
 	char t;
