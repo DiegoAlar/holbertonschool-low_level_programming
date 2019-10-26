@@ -29,7 +29,18 @@ void printInt(va_list va)
   */
 void printString(va_list va)
 {
-	printf("%s", va_arg(va, char*));
+	char *st = va_arg(va, char*);
+
+	switch (*st)
+	{
+		case ('\0'):
+			printf("(nil)");
+			break;
+		default:
+			printf("%s", st);
+			break;
+	}
+
 }
 /**
   * printFloat - prints a float number
@@ -53,7 +64,6 @@ void print_all(const char * const format, ...)
 	int i = 0, k = 0, q = 0;
 	va_list valist;
 
-
 	tp allTypes[] = {
 		{'c', printChar},
 		{'i', printInt},
@@ -63,7 +73,6 @@ void print_all(const char * const format, ...)
 
 	k = strlen(format);
 	va_start(valist, format);
-
 	while (i < k)
 	{
 		while (q < 4)
@@ -71,16 +80,8 @@ void print_all(const char * const format, ...)
 			if (allTypes[q].t == format[i])
 			{
 				allTypes[q].f(valist);
-				switch (i)
-				{
-					case (k - 1):
-						break;
-					default:
-						printf(", ");
-						break;
-				}
-				/*if (i < (k - 1))
-					printf(", ");*/
+				if (i < (k - 1))
+					printf(", ");
 				break;
 			}
 			q++;
@@ -88,5 +89,6 @@ void print_all(const char * const format, ...)
 		q = 0;
 		i++;
 	}
+	va_end(valist);
 	printf("\n");
 }
