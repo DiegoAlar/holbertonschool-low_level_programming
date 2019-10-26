@@ -1,6 +1,4 @@
 #include "variadic_functions.h"
-#include <stdio.h>
-
 /**
   * printChar - prints a char
   * @va: list with the arguments
@@ -68,7 +66,7 @@ void print_all(const char * const format, ...)
 		{'f', printFloat},
 	};
 	va_start(valist, format);
-	while (format[i] && format)
+	while (format && format[i])
 	{
 		switch (f)
 		{
