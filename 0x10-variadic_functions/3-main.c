@@ -11,6 +11,6 @@ int main(void)
 	    print_all("ceis", 'H', 0, "lberton");
 
 
-	   print_all("ese", 'H', 0);
+	   print_all("eie", 'H', 0);
 	        return (0);
 }
