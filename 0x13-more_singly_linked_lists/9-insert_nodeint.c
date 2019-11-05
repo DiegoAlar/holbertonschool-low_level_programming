@@ -28,8 +28,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		temp = temp->next;
 		countElemts++;
 	}
-	if (countElemts < (idx - 1))
-		return (NULL);
+	/*if (countElemts < (idx - 1))
+		return (NULL);*/
 	temp = *head;
 	while (position != idx)
 	{
