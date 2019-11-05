@@ -8,7 +8,7 @@
   */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int countElemts = 0, position = 0;
+	unsigned int countElemts = 0, position = 1;
 	listint_t *temp = (listint_t *) malloc(sizeof(listint_t));
 	listint_t *temp2 = (listint_t *) malloc(sizeof(listint_t));
 	listint_t *newN = (listint_t *) malloc(sizeof(listint_t));
