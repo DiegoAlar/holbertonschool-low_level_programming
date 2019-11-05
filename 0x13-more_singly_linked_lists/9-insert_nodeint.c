@@ -34,8 +34,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		temp->next = newN;
 		return (newN);
 	}
-	/*if (countElemts < idx)
-		return (NULL);*/
+	if (countElemts < idx)
+		return (NULL);
 	temp = *head;
 	while (position != idx)
 	{
