@@ -10,6 +10,9 @@ size_t print_listint(const listint_t *h)
 	unsigned int n = 0;
 	const listint_t *temp = h;
 
+	if (h == NULL)
+		return (0);
+
 	while (temp)
 	{
 		printf("%u\n", temp->n);
