@@ -36,7 +36,7 @@ int main(void)
 
 	    printf("-----------------\n");
 
-	    delete_nodeint_at_index(&head, 5);
+	    delete_nodeint_at_index(&head, 11);
 
 	    print_listint(head);
 

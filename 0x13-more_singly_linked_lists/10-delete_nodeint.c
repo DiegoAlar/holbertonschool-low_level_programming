@@ -1,4 +1,23 @@
 #include "lists.h"
+
+/**
+ * listint_len - function that returns the number of elements
+ * @h: the list
+ * Return: the length of a list
+ *
+ */
+size_t listint_len(const listint_t *h)
+{
+	size_t i = 0;
+
+	while (h)
+	{
+		i++;
+		h = h->next;
+	}
+	return (i);
+}
+
 /**
   * delete_nodeint_at_index - deletes the node at index
   * @head: ptr to head ptr
@@ -10,7 +29,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	unsigned int count = 0;
 	listint_t *temp, *newN;
 
-	if (*head == NULL || head == NULL)
+	if (*head == NULL || head == NULL || (listint_len(*head) - 1) < index)
 		return (-1);
 	temp = *head;
 	if (index == 0)
