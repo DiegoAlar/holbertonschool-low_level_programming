@@ -29,11 +29,12 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	if (newN->next == NULL)
 	{
 		temp->next = NULL;
+		free(newN);
 	}
 	else
 	{
-		newN = newN->next;
-		temp->next = newN;
+		temp->next = newN->next;
+		free(newN);
 	}
 	return (1);
 }
