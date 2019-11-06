@@ -8,15 +8,16 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int count = 0;
-	listint_t *temp;
-	listint_t *newN = (listint_t *) malloc(sizeof(listint_t));
+	listint_t *temp, *newN;
 
-	if (newN == NULL || *head == NULL)
+	if (*head == NULL)
 		return (-1);
 	temp = *head;
 	if (index == 0)
 	{
-		*head = (*head)->next;
+		newN = (*head)->next;
+		free(*head);
+		*head = newN;
 		return (1);
 	}
 	while (count < (index - 1))
