@@ -14,7 +14,7 @@ int main(void)
 
 
 
-	n = binary_to_uint("1");
+	n = binary_to_uint("0");
 
 	printf("%u\n", n);
 
