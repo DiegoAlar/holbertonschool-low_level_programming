@@ -11,7 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *temp = head;
 	int flag = 1;
 
-	if (!head)
+	if (head == NULL)
 		exit(98);
 	while (temp && flag)
 	{
