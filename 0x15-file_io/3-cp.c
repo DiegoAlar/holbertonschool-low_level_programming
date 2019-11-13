@@ -2,24 +2,22 @@
 #ifndef BUF_SIZE
 #define BUF_SIZE 1024
 #endif
-
+int cpy_fle(const char *file_from, const char *file_to);
 /**
   * main - copies the content of a file to another file
   * @argc: number of elements
   * @argv: array with argc elements
   * Return: 0 when succeded
   */
-int main(argc, **argv)
+int main(int argc, char **argv)
 {
-	int res:
-
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	res = cpy_fle(argv[1], argv[2]);
-	return (res);
+	cpy_fle(argv[1], argv[2]);
+	return (0);
 }
 /**
   * cpy_fle - copies the content of a file to another file
@@ -29,7 +27,7 @@ int main(argc, **argv)
   */
 int cpy_fle(const char *file_from, const char *file_to)
 {
-	int ifd, ofd, oFlags, nRead, nReadOK;
+	int ifd, ofd, oFlags, nRead;
 	char buff[BUF_SIZE];
 
 	ifd = open(file_from, O_RDONLY);
@@ -46,14 +44,15 @@ int cpy_fle(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	nRead = read(ifd, buff, BUF_SIZE);
-	if (nRead == -1)
+	while ((nRead = read(ifd, buff, BUF_SIZE)) > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-		exit(98);
+		if (write(ofd, buff, nRead) != nRead)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
 	}
-	nReadOK = write(ofd, buff, nRead);
-	if (nReadOK == -1)
+	if (nRead == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
