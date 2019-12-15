@@ -1,5 +1,24 @@
 #include "lists.h"
 /**
+  * delet_idx_zro - for cases of index eq to zero
+  * @head: pointer to head of list
+  */
+void delet_idx_zro(dlistint_t **head)
+{
+	if ((*head)->next)
+	{
+		*head = (*head)->next;
+		free((*head)->prev);
+		(*head)->prev = NULL;
+	}
+	else
+	{
+		free(*head);
+		*head = NULL;
+	}
+}
+
+/**
   * delete_dnodeint_at_index - delete node given an index
   * @head: the pointer of the header
   * @index: the index of node to be deleted
@@ -15,17 +34,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		return (-1);
 	if (!index)
 	{
-		if ((*head)->next)
-		{
-			*head = (*head)->next;
-			free((*head)->prev);
-			(*head)->prev = NULL;
-		}
-		else
-		{
-			free(*head);
-			*head = NULL;
-		}
+		delet_idx_zro(head);
 		return (1);
 	}
 	while (temp->next)
