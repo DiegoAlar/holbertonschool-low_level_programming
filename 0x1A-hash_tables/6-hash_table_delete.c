@@ -17,8 +17,6 @@ void free_list(hash_node_t *head)
 		free(head);
 		head = temp;
 	}
-	free(head->key);
-	free(head->value);
 	free(head);
 }
 
@@ -32,8 +30,8 @@ void hash_table_delete(hash_table_t *ht)
 	unsigned long int cont = 0;
 	hash_node_t *temp;
 
-	if (!ht)
-		return;
+	/*if (!ht)
+		return;*/
 	for (; cont < ht->size; cont++)
 	{
 		if (!ht->array[cont])
