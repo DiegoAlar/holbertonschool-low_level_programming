@@ -34,10 +34,11 @@ void hash_table_delete(hash_table_t *ht)
 		return;
 	for (; cont < ht->size; cont++)
 	{
-		/*if (!ht->array[cont])
-			continue;*/
-		temp = ht->array[cont];
-		free_list(temp);
+		if (ht->array[cont] != NULL)
+		{
+			temp = ht->array[cont];
+			free_list(temp);
+		}
 	}
 	free(ht->array);
 	free(ht);
