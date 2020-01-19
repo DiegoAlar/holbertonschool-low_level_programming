@@ -9,15 +9,14 @@ void free_list(hash_node_t *head)
 {
 	hash_node_t *temp;
 
-	while (head != NULL)
+	while (head)
 	{
-		temp = head->next;
-		free(head->key);
-		free(head->value);
-		free(head);
-		head = temp;
+		temp = head;
+		head = head->next;
+		free(temp->key);
+		free(temp->value);
+		free(temp);
 	}
-	free(head);
 }
 
 /**
