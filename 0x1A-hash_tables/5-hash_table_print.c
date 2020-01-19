@@ -10,15 +10,7 @@ void hash_table_print(const hash_table_t *ht)
 	int flag = 0;
 
 	if (!ht)
-	{
-		printf("{}\n");
 		return;
-	}
-	if (!ht->array)
-	{
-		printf("{}\n");
-		return;
-	}
 	printf("{");
 	for (; cont < ht->size; cont++)
 	{
