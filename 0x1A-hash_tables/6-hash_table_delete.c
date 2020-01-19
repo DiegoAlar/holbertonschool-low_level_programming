@@ -39,6 +39,7 @@ void hash_table_delete(hash_table_t *ht)
 		temp = ht->array[cont];
 		free_list(temp);
 	}
+	ht->array[0] = '\0';
 	free(ht->array);
 	free(ht);
 }
