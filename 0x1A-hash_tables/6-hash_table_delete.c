@@ -1,75 +1,32 @@
 #include "hash_tables.h"
 
 /**
-  * free_list - frees a linked list
-  * @head: linked list to be freed
-  *
-  */
-/*void free_list(hash_node_t *head)
-{
-	hash_node_t *temp;
-
-	while (head)
-	{
-		temp = head->next;
-		free(head->key);
-		free(head->value);
-		free(head);
-		head = temp;
-	}
-	free(head);
-}*/
-
-/**
   * hash_table_delete - deletes a hash table
   * @ht: the hash table to be deleted
   */
-
-/*void hash_table_delete(hash_table_t *ht)
-{
-	unsigned long int cont = 0;
-	hash_node_t *temp;
-
-	if (ht != NULL)
-	{
-		for (; cont < ht->size; cont++)
-		{
-			if (ht->array[cont] != NULL)
-			{
-				temp = ht->array[cont];
-				free_list(temp);
-			}
-		}
-		free(ht->array);
-		free(ht);
-	}
-}*/
-
-
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int cont = 0;
-	hash_node_t *temp, *aux;
+	hash_node_t *temp, *temp2;
 
-	if (ht != NULL)
+	if (!ht)
+		return;
+	for (; cont < ht->size; cont++)
 	{
-		for (; cont < ht->size; cont++)
+		if (!ht->array[cont])
+			continue;
+		temp = ht->array[cont];
+		while (temp)
 		{
-			if (ht->array[cont] != NULL)
-			{
-				temp = ht->array[cont];
-				while (temp)
-				{
-					aux = temp;
-					temp = temp->next;
-					free(aux->key);
-					free(aux->value);
-					free(aux);
-				}
-			}
+			temp2 = temp;
+			temp = temp->next;
+			free(temp2->key);
+			free(temp2->value);
+			free(temp2);
 		}
-		free(ht->array);
-		free(ht);
+
 	}
+	free(ht->array);
+	free(ht);
 }
 
