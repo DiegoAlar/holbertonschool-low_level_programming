@@ -9,11 +9,11 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *temp;
 	int flag = 0;
 
-	if (!ht)
+	/*if (!ht)
 	{
 		printf("{}\n");
 		return;
-	}
+	}*/
 	printf("{");
 	for (; cont < ht->size; cont++)
 	{
