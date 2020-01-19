@@ -11,12 +11,13 @@ void free_list(hash_node_t *head)
 
 	while (head)
 	{
-		temp = head;
-		head = head->next;
-		free(temp->key);
-		free(temp->value);
-		free(temp);
+		temp = head->next;
+		free(head->key);
+		free(head->value);
+		free(head);
+		head = temp;
 	}
+	free(head);
 }
 
 /**
