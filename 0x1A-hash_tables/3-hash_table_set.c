@@ -43,6 +43,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int idx;
 
+	if (!ht)
+		return (0);
 	if (!strcmp(key, ""))
 		return (0);
 	idx = key_index((unsigned char *)key, ht->size);
