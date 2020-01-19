@@ -30,16 +30,17 @@ void hash_table_delete(hash_table_t *ht)
 	unsigned long int cont = 0;
 	hash_node_t *temp;
 
-	if (!ht)
-		return;
-	for (; cont < ht->size; cont++)
+	if (ht != NULL)
 	{
-		if (ht->array[cont] != NULL)
+		for (; cont < ht->size; cont++)
 		{
-			temp = ht->array[cont];
-			free_list(temp);
+			if (ht->array[cont] != NULL)
+			{
+				temp = ht->array[cont];
+				free_list(temp);
+			}
 		}
+		free(ht->array);
+		free(ht);
 	}
-	free(ht->array);
-	free(ht);
 }
