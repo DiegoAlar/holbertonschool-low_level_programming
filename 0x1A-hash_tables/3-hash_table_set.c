@@ -19,6 +19,7 @@ int add_node(hash_node_t **head, const char *str_key, const char *str_value)
 		if (!strcmp(temp->key, str_key))
 		{
 			free(temp->value);
+			free(newN);
 			temp->value = strdup(str_value);
 			return (1);
 		}

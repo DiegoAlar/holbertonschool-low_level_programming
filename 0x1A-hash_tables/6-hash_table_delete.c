@@ -5,7 +5,7 @@
   * @head: linked list to be freed
   *
   */
-void free_list(hash_node_t *head)
+/*void free_list(hash_node_t *head)
 {
 	hash_node_t *temp;
 
@@ -18,14 +18,14 @@ void free_list(hash_node_t *head)
 		head = temp;
 	}
 	free(head);
-}
+}*/
 
 /**
   * hash_table_delete - deletes a hash table
   * @ht: the hash table to be deleted
   */
 
-void hash_table_delete(hash_table_t *ht)
+/*void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int cont = 0;
 	hash_node_t *temp;
@@ -43,4 +43,33 @@ void hash_table_delete(hash_table_t *ht)
 		free(ht->array);
 		free(ht);
 	}
+}*/
+
+
+void hash_table_delete(hash_table_t *ht)
+{
+	unsigned long int cont = 0;
+	hash_node_t *temp, *aux;
+
+	if (ht != NULL)
+	{
+		for (; cont < ht->size; cont++)
+		{
+			if (ht->array[cont] != NULL)
+			{
+				temp = ht->array[cont];
+				while (temp)
+				{
+					aux = temp;
+					temp = temp->next;
+					free(aux->key);
+					free(aux->value);
+					free(aux);
+				}
+			}
+		}
+		free(ht->array);
+		free(ht);
+	}
 }
+
