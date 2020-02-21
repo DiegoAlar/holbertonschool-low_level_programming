@@ -1,0 +1,3 @@
+all: lets_compile
+lets_compile:
+	gcc main.c holberton.c -o holberton
