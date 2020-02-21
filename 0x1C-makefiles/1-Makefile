@@ -1,0 +1,5 @@
+all: lets_compile
+CC = gcc
+SRC = .c
+lets_compile:
+	$(CC) main$(SRC) holberton$(SRC) -o holberton
