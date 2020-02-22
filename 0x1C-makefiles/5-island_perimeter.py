@@ -7,19 +7,15 @@ def island_perimeter(grid):
     i = 0
     k = 0
     acum = 0
-    l1 = 0
-    l2 = 0
-    l3 = 0
-    l4 = 0
-    while i < len(grid):
+    while i < len(grid) - 1:
         lakes = 0
-        while k < len(grid[i]):
-            if grid[i][k] == 1 and i != 0 and i != len(grid):
+        while k < len(grid[i]) - 1:
+            if grid[i][k] == 1 and i != 0 and i != len(grid) - 1:
                 if grid[i - 1][k] == 0:
                     acum += 1
-                if k != 0 and grid[i][k - 1] == 0:
+                if k != 0 and (grid[i][k - 1] == 0 or grid[i][0] == 1):
                     acum += 1
-                if k != len(grid[i]) - 1 and grid[i][k + 1] == 0:
+                if k != len(grid[i]) - 1 and (grid[i][k + 1] == 0 or k + 1 == len(grid[i]) - 1):
                     acum += 1
                 if (i < len(grid) - 1) and grid[i + 1][k] == 0:
                     acum += 1
