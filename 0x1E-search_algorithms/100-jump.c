@@ -9,7 +9,7 @@
  */
 int jump_search(int *array, size_t size, int value)
 {
-	int jump_step, flag = 0, prev = 0, subs = (int) floor(sqrt(size));
+	int jump_step, flag = 0, prev = 0, subs = (int) sqrt(size);
 	char *mge = "Value found between indexes [%d] and [%d]\n";
 
 	jump_step = floor(sqrt(size));
@@ -24,7 +24,7 @@ int jump_search(int *array, size_t size, int value)
 		else
 		{
 			prev = jump_step;
-			jump_step = jump_step + floor(sqrt(size));
+			jump_step = jump_step + sqrt(size);
 		}
 	}
 	if (flag)
@@ -32,7 +32,7 @@ int jump_search(int *array, size_t size, int value)
 	else
 	{
 		printf(mge, prev - subs, jump_step - subs);
-		prev -= floor(sqrt(size));
+		prev -= sqrt(size);
 	}
 	while (array[prev] <= value && prev < (int) size)
 	{
