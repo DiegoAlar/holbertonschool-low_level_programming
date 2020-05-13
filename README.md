@@ -3,7 +3,7 @@
 This folder contains all the projects in different directories for low level programming foundation. Mainly, all the code is written in C language
 
 
-# Directories
+## Directories
 
 - 0x00-hello_world
 - 0x01-variables_if_else_while
@@ -29,6 +29,6 @@ This folder contains all the projects in different directories for low level pro
 - 0x17-doubly_linked_lists
 - 0x18-dynamic_libraries
 
-## Author:
+### Author:
 
 This directory is written and mantain by **Diego A. Alarcón V.** (1153@holbertonschool.com)
